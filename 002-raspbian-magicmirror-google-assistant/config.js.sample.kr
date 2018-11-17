@@ -79,11 +79,10 @@ var config = {
 						fire: "SHOW_ALERT",
 						payload: function (payload)
 						{
-							return
-							{
-							type: "notification",
-							title: payload[0].execution[0].type,
-							message: payload[0].execution[0].command
+							return {
+								type: "notification",
+								title: payload[0].execution[0].type,
+								message: payload[0].execution[0].command
 							};
 						},
 					}, ],
@@ -95,9 +94,9 @@ var config = {
 					payload: function (payload)
 					{
 						return {
-						title: "HOOK",
-						message: "Are you saying " + payload.hook + "?",
-						timer: 5000
+							title: "HOOK",
+							message: "Are you saying " + payload.hook + "?",
+							timer: 5000
 						};
 					},
 					}, ],
