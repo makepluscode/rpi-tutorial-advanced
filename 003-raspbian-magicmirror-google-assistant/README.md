@@ -57,11 +57,11 @@ git clone https://github.com/eouia/MMM-Hotword.git
  ```
 2. Download the MMM-NotificationTrigger module source
  ```
-git clone https://github.com/eouia/MMM-Notifica...
- ```
+https://github.com/eouia/MMM-NotificationTrigger
+```
 3. Download the MMM-AssistantMk2 module source
  ```
-git clone https://github.com/eouia/MMM-Assistan...
+git clone https://github.com/eouia/MMM-AssistantMk2
  ```
 4. Go to MMM-Hotword and install the module
  ```
