@@ -69,6 +69,8 @@ npm i
  ```
 5. Go to the snowboy directory and install the module
  ```
+sudo apt-get --yes install libmagic-dev libatlas-base-dev sox libsox-fmt-all libasound2-dev
+
 npm i --save-dev electron-rebuild
 npm install nan
 ./node_modules/.bin/electron-rebuild
