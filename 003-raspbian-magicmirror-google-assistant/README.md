@@ -104,11 +104,11 @@ mv token.json ./profiles/default.json
 
 ```
 https://github.com/makepluscode/rpi-tutorial-advanced/blob/master/003-raspbian-magicmirror-google-assistant/config.js.sample.kr
-```
-
-```
 https://github.com/makepluscode/rpi-tutorial-advanced/blob/master/003-raspbian-magicmirror-google-assistant/config.js.sample.en
 ```
+
+## Install USB Mic. and Speaker
+https://github.com/makepluscode/rpi-tips/tree/master/001-bringup-audio-and-mic
 
 ##  Test
 Go to the location where the Magic Mirror is and start the application
@@ -119,3 +119,4 @@ npm start
 
 ## Video Tutorial 
  [![Watch the video](https://user-images.githubusercontent.com/39910774/47252575-f0c34980-d481-11e8-9c30-5b2543b722e5.png)](https://youtu.be/gNeGzUo-wbo)
+ 
