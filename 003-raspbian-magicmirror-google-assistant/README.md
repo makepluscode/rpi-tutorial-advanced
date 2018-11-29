@@ -53,6 +53,7 @@ bash -c "$(curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/maste
 ### STEP6. Installing Magic Mirror Module
 1. Go to modules directory and download the MMM-Hotword module source
  ```
+cd modules
 git clone https://github.com/eouia/MMM-Hotword.git
  ```
 2. Download the MMM-NotificationTrigger module source
@@ -65,10 +66,12 @@ git clone https://github.com/eouia/MMM-AssistantMk2
  ```
 4. Go to MMM-Hotword and install the module
  ```
+cd MMM-Hotword
 npm i
  ```
 5. Go to the snowboy directory and install the module
  ```
+cd node_modules/snowboy
 sudo apt-get --yes install libmagic-dev libatlas-base-dev sox libsox-fmt-all libasound2-dev
 
 npm i --save-dev electron-rebuild
