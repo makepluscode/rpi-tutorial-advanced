@@ -1,0 +1,11 @@
+{
+  "name": "Magic-Mirror-Module-PIR-Test",
+  "version": "0.0.1",
+  "scripts": {
+    "postinstall": "node_modules/.bin/electron-rebuild -e ../../node_modules/electron"
+  },
+  "dependencies": {
+    "onoff": "latest",
+    "electron-rebuild": "^1.2.1"
+  }
+}
