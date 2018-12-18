@@ -34,6 +34,8 @@ sudo apt-get install xrdp
 1. Remote access to raspberry pi. (ID: pi, password: raspberry)
 2. Install the Magic Mirror using a script on the Internet
 ```sh
+sudo apt-get install npm
+sudo npm install -g npm@latest
 bash -c "$(curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh)"
 ```
 
@@ -47,7 +49,7 @@ cd MMM-Hotword
 npm install
 
 cd ~/MagicMirror/modules/MMM-Hotword/node_modules/snowboy
-npm install --save-dev electron-rebuild
+npm install --save-dev electron-prebuilt
 npm install nan
 ./node_modules/.bin/electron-rebuild
 ```
@@ -62,7 +64,7 @@ npm install
 cd scripts
 chmod +x *.sh
 cd ~/MagicMirror/modules/MMM-AssistantMk2
-npm install --save-dev electron-rebuild
+npm install --save-dev electron-prebuilt
 ./node_modules/.bin/electron-rebuild
  ```
 
@@ -102,6 +104,29 @@ mv token.json ./profiles/default.json
 
 ## Install USB Mic. and Speaker
 https://github.com/makepluscode/rpi-tips/tree/master/001-bringup-audio-and-mic
+
+```sh
+vi ~/.asoundrc
+```
+
+```sh
+pcm.!default{
+  type asym
+  playback.pcm{
+    type hw
+    card 0
+  }
+  capture.pcm{
+    type plug
+    slave.pcm "hw:1, 0"
+  }
+}
+
+ctl.!default{
+  type hw
+  card 0
+}
+```
 
 ##  Test
 Go to the location where the Magic Mirror is and start the application
