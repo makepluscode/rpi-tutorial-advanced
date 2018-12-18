@@ -87,6 +87,33 @@ var config = {
 				showPublishDate: true
 			}
 		},
+		{
+			module: "MMM-Hotword",
+			config: {
+				record: {
+					recordProgram : "arecord",  
+					device        : "plughw:1"
+				},
+				autostart:true,
+				onDetected: {
+					notification: (payload) => {
+					return "ASSISTANT_ACTIVATE"
+					},
+					payload: (payload) => {
+						return {
+						  profile: payload.hotword
+						}
+					}
+				},
+			},
+		},
+		{
+			module: "MMM-AssistantMk2",
+			position: "top_right",
+			config: {
+				useWelcomeMessage: "brief today"
+			}
+		},
 	]
 
 };
