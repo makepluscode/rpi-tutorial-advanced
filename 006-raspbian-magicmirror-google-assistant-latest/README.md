@@ -49,7 +49,6 @@ cd MMM-Hotword
 npm install
 
 cd ~/MagicMirror/modules/MMM-Hotword/node_modules/snowboy
-npm install --save-dev electron-prebuilt
 npm install --save-dev electron-rebuild
 npm install nan
 ./node_modules/.bin/electron-rebuild
@@ -65,7 +64,6 @@ npm install
 cd scripts
 chmod +x *.sh
 cd ~/MagicMirror/modules/MMM-AssistantMk2
-npm install --save-dev electron-prebuilt
 npm install --save-dev electron-rebuild
 ./node_modules/.bin/electron-rebuild
  ```
@@ -100,10 +98,6 @@ mv token.json ./profiles/default.json
 ### STEP7. Edit Google assistant module config
 1. Open the Magic Mirror configuration file with TextEditor and modify it with the contents of github
 
-```
-
-```
-
 ## Install USB Mic. and Speaker
 https://github.com/makepluscode/rpi-tips/tree/master/001-bringup-audio-and-mic
 
@@ -129,6 +123,8 @@ ctl.!default{
   card 0
 }
 ```
+
+And, change audio output from hdmi to analog.
 
 ##  Test
 Go to the location where the Magic Mirror is and start the application
