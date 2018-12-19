@@ -50,6 +50,7 @@ npm install
 
 cd ~/MagicMirror/modules/MMM-Hotword/node_modules/snowboy
 npm install --save-dev electron-prebuilt
+npm install --save-dev electron-rebuild
 npm install nan
 ./node_modules/.bin/electron-rebuild
 ```
@@ -65,6 +66,7 @@ cd scripts
 chmod +x *.sh
 cd ~/MagicMirror/modules/MMM-AssistantMk2
 npm install --save-dev electron-prebuilt
+npm install --save-dev electron-rebuild
 ./node_modules/.bin/electron-rebuild
  ```
 
