@@ -24,15 +24,9 @@ This example is about how to install google assistant and magic mirror on raspbi
 ```sh
 sudo apt-get update
 ```
-4. Install Remote Desktop Server
-```sh
-sudo apt-get install xrdp
-```
-5. Check the IP address with ipconfig
 
 ### STEP4. Installing a Magic Mirror
-1. Remote access to raspberry pi. (ID: pi, password: raspberry)
-2. Install the Magic Mirror using a script on the Internet
+1. Install the Magic Mirror using a script on the Internet
 ```sh
 sudo apt-get install npm
 sudo npm install -g npm@latest
