@@ -13,7 +13,7 @@ This example is about how to install google assistant and magic mirror on raspbi
 2. Download Rufus to write images to SD card.
 3. Run Rufus and select the downloaded image to burn the SD card.
 
-### STEP2. Insert SD card + LCD connection
+### STEP2. Insert SD card + LCD + Power connection
 1. Insert SD card and keyboardㆍmouse dongle into raspberry pi.
 2. Connect LCD to raspberry pi on HDMI.
 
@@ -84,7 +84,7 @@ mv ~/Download/cre.... credentials.json
 node auth_and_test.js
 ```
 9. Accept the client verification process and copy and enter your Google account key
-10. Move the generated token.json and proceed with the installation of the module (takes about 10 to 20 minutes)
+10. Move the generated token.json
 ```sh
 mv token.json ./profiles/default.json
 ```
