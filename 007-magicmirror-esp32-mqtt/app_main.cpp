@@ -1,16 +1,19 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include "SSD1306.h"
+#include "DHT.h"
 
 #define PORT_LED 16
 
 const char* SSID = "****";
 const char* PASS = "****";
-const char* SERVER = "192.168.31.22";
+const char* SERVER = "***.***.***.***";
 const int PORT = 1883;
 
-SSD1306 display(0x3c, 5, 4); // instance for the OLED. Addr, SDA, SCL
- 
+SSD1306 display(0x3c, 5, 4);
+
+DHT dht(22, DHT11);
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -42,12 +45,11 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
     Serial.println();
 
-    client.publish("ttgo", str + ESP.getFreeHeap(), 32);
-
     updateLCD(String(str));
 }
 
-void setup() {
+void setup()
+{
     pinMode(PORT_LED, OUTPUT);
     Serial.begin(115200);
 
@@ -77,14 +79,30 @@ void setup() {
             delay(2000);
         }
     }
-
-    client.subscribe("ttgo/a");
-    client.subscribe("ttgo/b");
  }
 
 void loop() {
-    Serial.println("Hello, Loop!");
+    char buffer[16];
+    float humid = dht.readHumidity();
+    float tempC = dht.readTemperature(); // Celsius
+  
+    // check fail
+    if (isnan(humid) || isnan(tempC))
+    {
+        Serial.println("fail to read DHT.");
+        updateLCD("Fail to read!");
+        delay(1000);
+        return;
+    }
+    
+    memset(buffer, 0x00, sizeof(buffer));
+    sprintf(buffer, "H:%2.1f T:%2.1f", humid, tempC);
 
+    client.publish("ttgo/dht", buffer);
+
+    updateLCD(buffer);
+
+    //blink
     digitalWrite(PORT_LED, LOW);
     delay(1000);
     digitalWrite(PORT_LED, HIGH);
