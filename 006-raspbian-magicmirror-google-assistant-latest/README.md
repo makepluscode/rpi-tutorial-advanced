@@ -128,5 +128,5 @@ npm start
 ```
 
 ## Video Tutorial 
- [![Watch the video](https://user-images.githubusercontent.com/39910774/47252575-f0c34980-d481-11e8-9c30-5b2543b722e5.png)](https://youtu.be/gNeGzUo-wbo)
+ [![Watch the video](https://user-images.githubusercontent.com/39910774/47252575-f0c34980-d481-11e8-9c30-5b2543b722e5.png)](https://youtu.be/UBgH5hejYtM)
  
