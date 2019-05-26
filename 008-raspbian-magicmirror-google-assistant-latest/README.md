@@ -4,7 +4,7 @@ This example is about how to install google assistant and magic mirror on raspbi
 ## Dependency Versions
 1. OS : 2019-04-08-raspbian-stretch-full.img
 2. MagicMirror2 : 2.7.1
-3. MMM-Hotword : 	1.1.0
+3. MMM-Hotword : 2.0.1
 4. MMM-AssistantMk2 : 2.1.4
 
 ## Install
@@ -44,12 +44,7 @@ sudo apt-get install libmagic-dev libatlas-base-dev sox libsox-fmt-all mpg321 li
 cd ~/MagicMirror/modules/
 git clone https://github.com/eouia/MMM-Hotword.git
 cd MMM-Hotword
-npm install
-
-cd ~/MagicMirror/modules/MMM-Hotword/node_modules/snowboy\
-npm install nan
-npm install --save-dev electron-rebuild
-./node_modules/.bin/electron-rebuild
+chmod +x ./installer/install.sh
 ```
 
 3. Install MMM-AssistantMk2
