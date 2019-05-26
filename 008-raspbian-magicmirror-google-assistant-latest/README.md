@@ -45,6 +45,7 @@ cd ~/MagicMirror/modules/
 git clone https://github.com/eouia/MMM-Hotword.git
 cd MMM-Hotword
 chmod +x ./installer/install.sh
+./installer/install.sh
 ```
 
 3. Install MMM-AssistantMk2
