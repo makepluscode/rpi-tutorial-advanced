@@ -17,10 +17,17 @@ This example is about how to install google assistant and magic mirror on raspbi
 1. Insert SD card and keyboardㆍmouse dongle into raspberry pi.
 2. Connect LCD to raspberry pi on HDMI.
 
-### STEP3. First Boot
-1. Connect the USB power cable to the raspberry pi
-2. After boot is done, connect to the Internet with WIFI
-3. Update packages
+### STEP3. First Boot - PART1
+1. After boot is done, connect to the Internet with WIFI
+2. Install Remote Desktop Server
+```
+sudo apt-get install xrdp
+```
+3. Check the IP address with ipconfig
+
+### STEP3. First Boot - PART2
+1. Remote access to raspberry pi. (ID: pi, password raspberry)
+2. Update packages
 ```sh
 sudo apt-get update
 ```
