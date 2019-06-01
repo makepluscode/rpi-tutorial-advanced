@@ -8,8 +8,8 @@ This example is about how to install google assistant and magic mirror on raspbi
 4. MMM-AssistantMk2 : 2.1.4
 
 ## Install
-### STEP1. Rasbian installation
-1. Download the latest image from the RazBian website. (2019-04-08-raspbian)
+### STEP1. Raspbian installation
+1. Download the latest image from the Raspbian website. (2019-04-08-raspbian)
 2. Download Rufus to write images to SD card.
 3. Run Rufus and select the downloaded image to burn the SD card.
 
