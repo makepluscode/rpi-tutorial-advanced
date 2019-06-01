@@ -91,52 +91,62 @@ mv token.json ./profiles/default.json
 ### STEP7. Edit Google assistant module config
 1. Open the Magic Mirror configuration file with TextEditor and modify it with the contents of github
 ```sh
-		{
-			module: "MMM-Hotword",
-			config: {
-				record: {
-					recordProgram : "arecord",  
-					device        : "plughw:1"
-				},
-				autostart:true,
-				onDetected: {
-					notification: (payload) => {
-					return "ASSISTANT_ACTIVATE"
-					},
-					payload: (payload) => {
-						return {
-						  profile: payload.hotword
-						}
+{
+	module: "MMM-Hotword",
+	position: "top_right",
+	config: {
+		chimeOnFinish: null,
+		mic: {
+			recordProgram: "arecord",
+			device: "plughw:1"
+		},
+		models: [
+			{
+				hotwords    : "smart_mirror",
+				file        : "smart_mirror.umdl",
+				sensitivity : "0.5",
+			},
+		],
+		commands: {
+			"smart_mirror": {
+				notificationExec: {
+					notification: "ASSISTANT_ACTIVATE",
+					payload: (detected, afterRecord) => {
+						return {profile:"default"}
 					}
 				},
+				restart:false,
+				afterRecordLimit:0
+			}
+		}
+	}
+},
+{
+	module: "MMM-AssistantMk2",
+	position: "top_right",
+	config: {
+		deviceLocation: {
+			coordinates: {
+				latitude: 37.5650168, // -90.0 - +90.0
+				longitude: 126.8491231, // -180.0 - +180.0
 			},
 		},
-		{
-			module: "MMM-AssistantMk2",
-			position: "top_right",
-			config: {
-				deviceLocation: {
-					coordinates: { // set the latitude and longitude of the device to get localized information like weather or time. (ref. mygeoposition.com)
-					latitude: 37.5650168, // -90.0 - +90.0
-					longitude: 126.8491231, // -180.0 - +180.0
-					},
-				},
-				record: {
-					recordProgram : "arecord",  
-					device        : "plughw:1",
-				},
-				notifications: {
-					ASSISTANT_ACTIVATED: "HOTWORD_PAUSE",
-					ASSISTANT_DEACTIVATED: "HOTWORD_RESUME",
-				},
-				useWelcomeMessage: "brief today",
-				profiles: {
-					"default" : {
-						lang: "en-US"
-					}
-				},
+		record: {
+			recordProgram : "arecord",  
+			device        : "plughw:1",
+		},
+		notifications: {
+			ASSISTANT_ACTIVATED: "HOTWORD_PAUSE",
+			ASSISTANT_DEACTIVATED: "HOTWORD_RESUME",
+		},
+		useWelcomeMessage: "brief today",
+		profiles: {
+			"default" : {
+				lang: "en-US"
 			}
 		},
+	}
+},
 ```
 ## Install USB Mic. and Speaker
 https://github.com/makepluscode/rpi-tips/tree/master/001-bringup-audio-and-mic
