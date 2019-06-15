@@ -1,3 +1,5 @@
+![2-1_title](https://user-images.githubusercontent.com/39910774/59553049-7a53f880-8fca-11e9-80ca-a0c3f8473e27.png)
+
 # RASPBERRY PI TUTORIAL ADVANCED
 This example is about how to install google assistant and magic mirror on raspbian.
 
@@ -191,5 +193,5 @@ npm start
 ```
 
 ## Video Tutorial 
- [![Watch the video](https://user-images.githubusercontent.com/39910774/47252575-f0c34980-d481-11e8-9c30-5b2543b722e5.png)](https://youtu.be/UBgH5hejYtM)
+ [![Watch the video](https://user-images.githubusercontent.com/39910774/47252575-f0c34980-d481-11e8-9c30-5b2543b722e5.png)](https://youtu.be/jrOOBGkOOZQ)
  
